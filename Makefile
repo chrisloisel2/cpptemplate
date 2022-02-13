@@ -7,12 +7,12 @@ I =		-I include/
 
 SRC_DIR = src
 
-FLAGS =	-Wextra -Werror -Wall -std=c++98
+FLAGS =	-Wextra -Werror -Wall -std=c++98 $I
 
-GCC =	clang++
+GCC =	c++
 
 %.o : %.cpp
-	$(GCC) $(I) -o $@ -c $<
+	$(GCC) $(FLAGS) -o $@ -c $<
 
 O =		${SRC:.cpp=.o}
 
